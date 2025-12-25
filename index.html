@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona - More Than A Club</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" type="text/css" href="stle.css">
+</head>
+<body>
+
+    <div class="showcase-container">
+        
+        <!-- Header Section -->
+        <header>
+            <h1>FC BARCELONA</h1>
+            <div class="subtitle">More Than A Club</div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main>
+            <section>
+                <h2>About FCB</h2>
+                <p>
+                    Futbol Club Barcelona, commonly known as FC Barcelona and colloquially as Barça, is a professional football club based in Barcelona, Catalonia, Spain, that competes in La Liga, the top flight of Spanish football.
+                </p>
+                <p style="font-size: 0.95rem; color: #64748b; font-style: italic;">
+                    Founded in 1899 by a group of Swiss, English, and Catalan footballers led by Joan Gamper, the club has become a symbol of Catalan culture and Catalanism.
+                </p>
+            </section>
+
+            <section>
+                <h2>Club Actions</h2>
+                <div class="actions">
+                    <!-- Styled Link -->
+                    <a href="https://www.fcbarcelona.com" target="_blank" class="link-card">
+                        <span class="link-icon">🌍</span>
+                        <strong>Visit Official Site</strong>
+                        <div style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">fcbarcelona.com</div>
+                    </a>
+
+                    <!-- Styled Button with JS Interaction -->
+                    <button class="cta-button" onclick="showAlert()">
+                        <span>⚽</span> Show Club Spirit
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Visual Section -->
+        <aside class="visual-section">
+            <div class="image-wrapper">
+                <!-- Using a placeholder image for demonstration -->
+                <img src="D:/fcba.jpg">
+                <div class="img-caption">BARCELONA LOGO & ATMOSPHERE</div>
+            </div>
+        </aside>
+
+        <!-- Footer -->
+        <footer>
+            &copy; 2023 Fan Page Showcase. All rights reserved.
+        </footer>
+
+    </div>
+
+    <!-- Custom Modal (Replacement for native alert) -->
+    <div class="modal-overlay" id="customModal">
+        <div class="modal-content">
+            <h3 class="modal-title">Visca el Barça!</h3>
+            <p class="modal-text">
+                This is barcelona
+            <button class="modal-close" onclick="closeAlert()">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="head.js"></script>
+</body>
+</html>

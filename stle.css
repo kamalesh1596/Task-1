@@ -1,0 +1,311 @@
+/* --- CSS VARIABLES & THEME SETUP --- */
+:root {
+    /* Official FCB Colors approximations */
+    --fcb-navy: #004D98;
+    --fcb-garnet: #A50044;
+    --fcb-yellow: #EDBB00;
+    --fcb-dark: #003366;
+    
+    /* UI Colors */
+    --bg-color: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-main: #1e293b;
+    --text-light: #f8fafc;
+    --transition: all 0.3s ease;
+}
+
+/* --- RESET & TYPOGRAPHY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, var(--fcb-navy), #001a33);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- LAYOUT CONTAINER --- */
+.showcase-container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* --- HEADER SECTION --- */
+header {
+    background: linear-gradient(to right, var(--fcb-garnet), var(--fcb-navy));
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 2px, transparent 3px);
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--fcb-yellow);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- MAIN CONTENT --- */
+main {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--fcb-navy);
+    border-bottom: 3px solid var(--fcb-yellow);
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+/* --- IMAGE STYLING --- */
+.image-wrapper {
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 50;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.img-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 20px;
+    font-weight: 600;
+}
+
+/* --- ACTIONS SECTION --- */
+.actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.link-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: center;
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--text-main);
+    display: block;
+}
+
+.link-card:hover {
+    border-color: var(--fcb-navy);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 77, 152, 0.15);
+}
+
+.link-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, var(--fcb-garnet), #800035);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px -1px rgba(165, 0, 68, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #c40052, var(--fcb-garnet));
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(165, 0, 68, 0.5);
+}
+
+/* --- CUSTOM MODAL --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--fcb-yellow);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-title {
+    color: var(--fcb-navy);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.modal-text {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.modal-close {
+    background: #e2e8f0;
+    color: #333;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    background: #cbd5e1;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #f1f5f9;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* --- RESPONSIVE --- */
+@media (min-width: 768px) {
+    .showcase-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    header {
+        grid-column: 1 / -1;
+    }
+    .image-wrapper {
+        height: 100%;
+        min-height: 300px;
+    }
+    main {
+        grid-column: 1 / 2;
+        justify-content: center;
+    }
+    .visual-section {
+        grid-column: 2 / 3;
+        padding: 0;
+        margin: 0;
+    }
+    .visual-section .image-wrapper {
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
