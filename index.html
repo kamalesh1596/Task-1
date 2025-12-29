@@ -3,77 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FC Barcelona - More Than A Club</title>
-    <!-- Link to the CSS file -->
-    <link rel="stylesheet" type="text/css" href="stle.css">
-</head>
+    <title>Advanced JS & Styling - ApexPlanet</title>
+    <link rel="stylesheet" href="style.css"></head>
 <body>
+    <header>
+        <h1>Interactive Dashboard</h1>
+    </header>
 
-    <div class="showcase-container">
-        
-        <!-- Header Section -->
-        <header>
-            <h1>FC BARCELONA</h1>
-            <div class="subtitle">More Than A Club</div>
-        </header>
-
-        <!-- Main Content Section -->
-        <main>
-            <section>
-                <h2>About FCB</h2>
-                <p>
-                    Futbol Club Barcelona, commonly known as FC Barcelona and colloquially as Barça, is a professional football club based in Barcelona, Catalonia, Spain, that competes in La Liga, the top flight of Spanish football.
-                </p>
-                <p style="font-size: 0.95rem; color: #64748b; font-style: italic;">
-                    Founded in 1899 by a group of Swiss, English, and Catalan footballers led by Joan Gamper, the club has become a symbol of Catalan culture and Catalanism.
-                </p>
-            </section>
-
-            <section>
-                <h2>Club Actions</h2>
-                <div class="actions">
-                    <!-- Styled Link -->
-                    <a href="https://www.fcbarcelona.com" target="_blank" class="link-card">
-                        <span class="link-icon">🌍</span>
-                        <strong>Visit Official Site</strong>
-                        <div style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">fcbarcelona.com</div>
-                    </a>
-
-                    <!-- Styled Button with JS Interaction -->
-                    <button class="cta-button" onclick="showAlert()">
-                        <span>⚽</span> Show Club Spirit
-                    </button>
-                </div>
-            </section>
-        </main>
-
-        <!-- Visual Section -->
-        <aside class="visual-section">
-            <div class="image-wrapper">
-                <!-- Using a placeholder image for demonstration -->
-                <img src="D:/fcba.jpg">
-                <div class="img-caption">BARCELONA LOGO & ATMOSPHERE</div>
+    <main class="container">
+        <!-- API Section: Real-time Weather -->
+        <section id="api-section" class="card">
+            <h2>Real-time Weather (Public API)</h2>
+            <!-- JavaScript uses 'joke-text' ID to inject weather data -->
+            <div id="joke-text" class="data-display">
+                <p>Loading weather data...</p>
             </div>
-        </aside>
+            <button class="fetch-btn" onclick="fetchWeather()">Update Weather</button>
+        </section>
 
-        <!-- Footer -->
-        <footer>
-            &copy; 2023 Fan Page Showcase. All rights reserved.
-        </footer>
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="card">
+            <h2>Interactive Quiz</h2>
+            
+            <!-- This container is hidden by JS when quiz ends -->
+            <div id="quiz-container">
+                <p id="question" class="quiz-question">Loading question...</p>                <div id="options" class="options-grid">
+                    <!-- Buttons are generated here dynamically by JS -->                </div>
+            </div>
 
-    </div>
+            <!-- This container is shown by JS when quiz ends -->
+            <div id="result-container" class="hidden result-box">
+                <h3>Quiz Completed!</h3>
+                <p>Your Final Score: <span id="final-score">0</span></p>
+                
+                <div class="save-score-form">
+                    <input type="text" id="username" placeholder="Enter your name to save">
+                    <button onclick="saveScore()" class="save-btn">Save Score</button>
+                </div>
+            </div>
+        </section>
 
-    <!-- Custom Modal (Replacement for native alert) -->
-    <div class="modal-overlay" id="customModal">
-        <div class="modal-content">
-            <h3 class="modal-title">Visca el Barça!</h3>
-            <p class="modal-text">
-                This is barcelona
-            <button class="modal-close" onclick="closeAlert()">Close</button>
-        </div>
-    </div>
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="card">
+            <h2>High Scores</h2>
+            <ul id="score-list" class="leaderboard-list">                <!-- Scores injected here from backend -->
+                <li>No scores saved yet.</li>
+            </ul>
+        </section>    </main>
 
-    <!-- JavaScript Logic -->
-    <script src="head.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,197 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Unique Color Palette: Deep Teal & Aurora Green */
+    --primary-gradient: linear-gradient(135deg, #00b09b, #96c93d);
+    --bg-color: #f0f4f3;
+    --card-bg: #ffffff;
+    --text-dark: #1a3c34;
+    --text-light: #ffffff;
+    --accent-coral: #ff7e5f;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at top right, #d1e8e2 0%, transparent 40%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+/* Layout Grid */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+/* Card Component Styling */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 176, 155, 0.15);
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #008080;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card h2::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: var(--primary-gradient);
+    border-radius: 10px;
+}
+
+/* Quiz Specifics */
+#options {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+#options button {
+    background: #f8faf9;
+    color: var(--text-dark);
+    border: 2px solid #edf2f0;
+    text-align: left;
+    font-weight: 500;
+}
+
+#options button:hover {
+    background: #e0f2f1;
+    border-color: #00b09b;    color: #00796b;
+}
+
+/* Generic Button Styling */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 600;
+    transition: var(--transition);
+    background: var(--primary-gradient);
+    color: var(--text-light);
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.3);
+}
+
+button:hover {    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+/* Input Styling */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #edf2f0;
+    border-radius: 12px;
+    margin: 15px 0;
+    font-family: inherit;
+    outline: none;
+    transition: var(--transition);
+}
+
+input[type="text"]:focus {
+    border-color: #00b09b;
+}
+
+/* Leaderboard List */
+#score-list {
+    list-style: none;
+}
+
+#score-list li {
+    background: #fdfdfd;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #96c93d;
+}
+
+/* Utilities */
+.hidden {
+    display: none;
+}
+
+#joke-text {
+    font-style: italic;
+    color: #557a72;
+    margin-bottom: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet View */
+@media (max-width: 992px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+}
+
+/* Mobile View */@media (max-width: 480px) {
+    body {
+        padding: 15px;    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
